@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-easyselect.css">
+	<script type="text/javascript" src="jquery2.2.3.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap-easyselect.js"></script>
+</head>
+<body>
+<div class="btn-group" id="easyselect">
+	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		<span class="easyselect-selected-text">111</span>
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu easyselect-container">
+		<li><a value="111">111</a></li>
+		<li class="extend-li">
+			<a value="222">222</a>
+			<ul class="dropdown-menu extend-menu">
+				<li><a >子菜单1</a></li>
+				<li><a value="子菜单2">子菜单2</a></li>
+				<li><a value="子菜单3">子菜单3</a></li>
+			</ul>
+		</li>
+		<li><a value="333">333</a></li>
+		<li><a value="444">444</a></li>
+	</ul>
+</div>
+<div>
+	<button onclick="dataprovider()">dataprovider</button>
+	<button onclick="getvalue()">getvalue</button>
+</div>
+
+<script type="text/javascript">
+    $('#easyselect').easyselect({
+    	name : 'cname',
+    	value: 'name',
+    	onChange: function(){
+    		getvalue('aggr')
+    	}
+    });
+
+	function getvalue(attr){
+		var val = $('#easyselect').easyselect('getValue',attr);
+		alert(val);
+	}
+
+	function dataprovider(data){
+		 $('#easyselect').easyselect('dataprovider',[
+		 	{name:'数据1',value:'data1'},
+		 	{name:'数据2',value:'data2',disabled:true},
+		 	{name:'数据3',value:'data3',children:[
+		 		{name:'子集1',value:'child1',attributes:{aggr:'aggr',dd:'dd'}},
+		 		{name:'子集2',value:'child2',disabled:true},
+		 		{name:'子集3',value:'child3'}
+		 	]},
+		 	{name:'数据4',value:'data4'}
+		 ]);
+	}
+	
+
+	
+</script>
+</body>
+</html>

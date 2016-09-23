@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+.easyselect-container {
+	position:absolute;
+	list-style-type:none;
+	margin:0;
+	padding:0
+}
+.easyselect-container .input-group {
+	margin:5px
+}
+.easyselect-container>li {
+	position: relative;
+	cursor: pointer;
+}
+.dropdown-menu li.disabled{
+	background: #eee;
+	cursor: not-allowed;
+}
+.dropdown-menu li.extend-li{
+
+}
+
+.easyselect .easyselect-selected-text{
+	float:left;
+}
+.easyselect-container .dropdown-menu{
+	position: absolute;
+	top: -2px;
+	left: 100%;
+}
+.easyselect-container .extend-li:hover .dropdown-menu{
+	display: block
+}

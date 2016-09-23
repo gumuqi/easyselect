@@ -1,0 +1,20 @@
+{
+  "name": "easyselect",
+  "version": "1.0.1",
+  "description": "基于bootstrap下拉菜单的下拉框",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gumuqi/easyselect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^2.2.3"
+  }
+}
